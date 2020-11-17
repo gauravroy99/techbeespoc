@@ -44,26 +44,12 @@ String city =request.getParameter(com.constants.UIConstants.CITY);
 String p_code =request.getParameter(com.constants.UIConstants.PINCODE);
 String state =request.getParameter(com.constants.UIConstants.STATE);
 String pwd =request.getParameter(com.constants.UIConstants.PWD);
+	
 //String c_pwd =request.getParameter("conf_pwd");
-String query =com.constants.QueryConstants.UDINSQUERY+ rand + ","+
-"'"+ first_name +"',"+
-"'"+ last_name +"',"+
-mob_number +","+
-gender+","+
-"'"+ address +"',"+
-"'"+ city +"',"+
-"'"+ p_code+"',"+
-"'"+ state +"',"+
-"'India',"+
-"'"+DOB+ "')"+
-";";
-String query2 = com.constants.QueryConstants.ULINSQUERY+ rand + ","+
-"'"+ first_name +"',"+
-"'"+ last_name +"',"+
-"'"+ email_id +"',"+
-"'"+ pwd +"',"+
-"1)"+
-";";
+String query = com.constants.QueryConstants.INSERTQUERY + rand + "," + " TRIM ('" + first_name + "')," +
+" TRIM ('" + last_name + "')," + "1," + " TRIM ('" + email_id + "')," + mob_number + "," + gender + ","
++ " TRIM ('" + address + "')," + " TRIM ('" + city + "')," + p_code + "," + " TRIM ('" + state + "'),"
++ "'India'," + " TRIM ('" + pwd + "')," + "'" + DOB + "')" + ";";
 try{
 	
     Class.forName(com.constants.URLConstants.DATABASEDRIVER);  
